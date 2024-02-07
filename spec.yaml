@@ -48,7 +48,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CustomerPagedList"
+              $ref: "#/components/schemas/Customer"
       responses:
         "201":
           description: Customer Created
@@ -133,6 +133,7 @@ components:
         id:
           type: string
           format: uuid
+          readOnly: true
         firstName:
           type: string
           minLength: 2
