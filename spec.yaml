@@ -76,6 +76,22 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Customer"
+    put:
+      summary: Update Customer
+      description: Udate Customer by Id
+      tags:
+        - Customer
+      parameters:
+        - $ref: "#/components/parameters/CustomerIdParam"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Customer"
+      responses:
+        "204":
+          description: Customer Updated
 components:
   parameters:
     PageNumberParam:
