@@ -30,6 +30,13 @@ paths:
             type: integer
             format: int32
             default: 1
+        - name: pageSize
+          in: query
+          description: Page Size
+          schema:
+            type: integer
+            format: int32
+            default: 25
 
       responses:
         "200":
