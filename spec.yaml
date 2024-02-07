@@ -22,6 +22,8 @@ servers:
 paths:
   /v1/customers:
     get:
+      summary: List Customers
+      description: Get a list of customers in the system
       parameters:
         - $ref: "#/components/parameters/PageNumberParam"
         - $ref: "#/components/parameters/PageSizeParam"
@@ -36,8 +38,16 @@ paths:
 
   /v1/customers/{customerId}:
     get:
+      summary: Get a Customer by Id
+      description: Get a single **Customer** by its Id value
       parameters:
-        - $ref: "#/components/parameters/CustomerIdParam"
+        - name: customerId
+          in: path
+          description: CustomerId
+          required: true
+          schema:
+            type: string
+            format: uuid
       responses:
         "200":
           description: Customer found
@@ -64,13 +74,6 @@ components:
         format: int32
         default: 25
     CustomerIdParam:
-      name: customerId
-      in: path
-      description: CustomerId
-      required: true
-      schema:
-        type: string
-        format: uuid
 
   schemas:
     Address:
