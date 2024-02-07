@@ -24,11 +24,22 @@ paths:
     get:
       responses:
         "200":
-          description: List of customers
+          description: List of Customers
+          content:
+            application/json:
+              schema:
+                type: array
+                minItems: 2
+                maxItems: 100
+                items:
+                  type: string
+                  description: Customer Name
+                  minLength: 2
+                  maxLength: 100
   /v1/beers:
     get:
       responses:
         "200":
-          description: responses
+          description: List of Beers
         "404":
           description: (Not Fount) response
