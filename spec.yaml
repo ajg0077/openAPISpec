@@ -23,20 +23,8 @@ paths:
   /v1/customers:
     get:
       parameters:
-        - name: pageNumber
-          in: query
-          description: Page Number
-          schema:
-            type: integer
-            format: int32
-            default: 1
-        - name: pageSize
-          in: query
-          description: Page Size
-          schema:
-            type: integer
-            format: int32
-            default: 25
+        - $ref: "#/components/parameters/PageNumberParam"
+        - $ref: "#/components/parameters/PageSizeParam"
 
       responses:
         "200":
@@ -46,6 +34,24 @@ paths:
               schema:
                 $ref: "#/components/schemas/CustomerPagedList"
 components:
+  parameters:
+    PageNumberParam:
+      name: pageNumber
+      in: query
+      description: Page Number
+      schema:
+        type: integer
+        format: int32
+        default: 1
+    PageSizeParam:
+      name: pageSize
+      in: query
+      description: Page Size
+      schema:
+        type: integer
+        format: int32
+        default: 25
+
   schemas:
     Address:
       type: object
