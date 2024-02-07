@@ -33,6 +33,18 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CustomerPagedList"
+
+  /v1/customers/{customerId}:
+    get:
+      parameters:
+        - $ref: "#/components/parameters/CustomerIdParam"
+      responses:
+        "200":
+          description: Customer found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Customer"
 components:
   parameters:
     PageNumberParam:
@@ -51,6 +63,14 @@ components:
         type: integer
         format: int32
         default: 25
+    CustomerIdParam:
+      name: customerId
+      in: path
+      description: CustomerId
+      required: true
+      schema:
+        type: string
+        format: uuid
 
   schemas:
     Address:
