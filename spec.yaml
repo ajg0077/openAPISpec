@@ -92,6 +92,17 @@ paths:
       responses:
         "204":
           description: Customer Updated
+    delete:
+      summary: Delete Customer by Id
+      description: Delete Customer by its Id value
+      tags:
+        - Customer
+      operationId: deleteCustomerByIdV1
+      parameters:
+        - $ref: "#/components/parameters/CustomerIdParam"
+      responses:
+        "200":
+          description: Customer Deleted
 components:
   parameters:
     PageNumberParam:
