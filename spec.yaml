@@ -59,7 +59,10 @@ paths:
                 type: string
                 format: uri
                 example: http://examle.com/v1/customers/{assignedIdValue}
-
+        "400":
+          description: Bad Request
+        "409":
+          description: Conflict
   /v1/customers/{customerId}:
     get:
       summary: Get a Customer by Id
@@ -76,6 +79,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Customer"
+        "404":
+          description: Not Found
     put:
       summary: Update Customer
       description: Udate Customer by Id
@@ -92,6 +97,8 @@ paths:
       responses:
         "204":
           description: Customer Updated
+        "400":
+          description: Bad Request
     delete:
       summary: Delete Customer by Id
       description: Delete Customer by its Id value
@@ -103,6 +110,10 @@ paths:
       responses:
         "200":
           description: Customer Deleted
+        "404":
+          description: Not Found
+        "409":
+          description: Conflict
 components:
   parameters:
     PageNumberParam:
