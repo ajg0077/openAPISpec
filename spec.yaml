@@ -26,6 +26,7 @@ paths:
       description: Get a list of customers in the system
       tags:
         - Customer
+      operationId: listCustomerV1 # Must be unique from all operations in the api,Used for code generation and value is case-sensitive
       parameters:
         - $ref: "#/components/parameters/PageNumberParam"
         - $ref: "#/components/parameters/PageSizeParam"
@@ -44,6 +45,7 @@ paths:
       description: Get a single **Customer** by its Id value
       tags:
         - Customer
+      operationId: getCustomerByIdV1
       parameters:
         - $ref: "#/components/parameters/CustomerIdParam"
       responses:
