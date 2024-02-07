@@ -52,6 +52,13 @@ paths:
       responses:
         "201":
           description: Customer Created
+          headers:
+            location:
+              description: Location of the Created customer
+              schema:
+                type: string
+                format: uri
+                example: http://examle.com/v1/customers/{assignedIdValue}
 
   /v1/customers/{customerId}:
     get:
