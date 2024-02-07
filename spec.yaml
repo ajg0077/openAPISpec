@@ -57,6 +57,16 @@ paths:
                         city:
                           type: string
                           example: Trivandrum
+                        stateCode:
+                          type: string
+                          minLength: 2
+                          maxLength: 2
+                          # enum: [KL,TN, KA, AP]
+                          enum:
+                            - KL
+                            - TN
+                            - KA
+                            - AP
                         zipcode:
                           type: string
                           example: 44556
